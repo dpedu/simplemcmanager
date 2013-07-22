@@ -6,6 +6,8 @@ from jinja2 import Environment, FileSystemLoader
 import traceback
 import paramiko
 
+env = Environment(loader=FileSystemLoader("./templates/"))
+
 def render(templateFilePath, vars):
 	tb = None
 	try:
@@ -56,8 +58,6 @@ class sshManager(object):
 		return self.execute("/etc/init.d/minecraft status")
 	def kill(self):
 		return self.execute("killall java")
-
-env = Environment(loader=FileSystemLoader("./templates/"))
 
 def getManager(password):
 	manager = sshManager('127.0.0.1', 'minecraft', password)
