@@ -1,0 +1,19 @@
+{% extends "html.htm" %}
+{% block body %}
+<h1>Server Manager</h1>
+<h2>Execute Command</h2>
+<form action="/manager_command" method="post">
+<label>Command: <input type="text" name="command" /></label>
+<input type="submit" value="Execute" />
+</form>
+
+<h2>Start/Stop Server</h2>
+<button onclick="confirmReturn('/manager_start', 'Are you sure you want to start the server?')">Start</button>
+<button onclick="confirmReturn('/manager_stop', 'Are you sure you want to stop the server?')">Stop</button>
+<button onclick="confirmReturn('/manager_restart', 'Are you sure you want to restart the server?')">Restart</button>
+<button onclick="confirmReturn('/manager_kill', 'Are you sure you want to kill the server?')">Kill</button>
+<button onclick="window.location='/manager_status';">Status</button>
+
+<br /><br />
+<a href="/logout">Log Out</a>
+{% endblock %}

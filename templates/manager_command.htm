@@ -1,0 +1,15 @@
+{% extends "html.htm" %}
+{% block body %}
+<h1>Execute Command:</h1>
+<div class="command_result">
+	<pre>{{ result }}</pre>
+</div>
+
+<form action="/manager_command" method="post">
+	<a href="/manager">Return</a> or 
+	<label>Execute another: <input type="text" name="command" /></label>
+	<input type="submit" value="Execute" />
+</form>
+
+<script type="text/javascript">$("input[name=command]").focus();</script>
+{% endblock %}

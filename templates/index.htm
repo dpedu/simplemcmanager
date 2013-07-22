@@ -1,0 +1,16 @@
+{% extends "html.htm" %}
+{% block body %}
+
+{% if failed %}
+<h1>Login failed!</h1>
+{% else %}
+<h1>Login</h1>
+{% endif %}
+
+<form action="/" method="post">
+<label>Password: <input type="password" name="password" /></label>
+<input type="submit" value="Submit" />
+</form>
+
+
+{% endblock %}
